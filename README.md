@@ -73,6 +73,13 @@ yarn add express mysql cors
 
 <br>
 
-Pronto!! Todas as dependências foram instalar e agora é só iniciar o servidor e testar
+Pronto!! Todas as dependências foram instalar e agora é só iniciar o servidor
+```
+cd client/
+yarn start
+
+cd server/
+node index.js
+```
 
 ***
