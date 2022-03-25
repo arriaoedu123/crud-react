@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/arriaoedu123/boxshadow-generator/blob/main/LICENSE">
+  <a href="https://github.com/arriaoedu123/crud-react/blob/main/LICENSE">
   <img src="https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge"/>
   </a>
 </p>
