@@ -290,6 +290,14 @@
   margin-top: 2rem;
 }
 
+.lista-pessoas .separator {
+  border: 1px solid #17a2b8;
+}
+
+.lista-pessoas .separator span {
+  color: #17a2b8;
+}
+
 .read-buttons {
   display: flex;
   justify-content: end;
