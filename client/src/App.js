@@ -71,6 +71,8 @@ function App() {
   const verPessoas = () => {
     Axios.get("http://localhost:3001/pessoas").then((response) => {
       verListaPessoas(response.data);
+    }).catch(() => {
+      window.alert("Ocorreu um erro!");
     });
   };
 
@@ -144,7 +146,8 @@ function App() {
   };
 
   // funções Update e Create do CRUD
-  const onSubmit = (e) => { // função Update do CRUD
+  const onSubmit = (e) => {
+    // função Update do CRUD
     e.preventDefault();
     if (state.button === 1) {
       Axios.put("http://localhost:3001/update", {
@@ -158,11 +161,17 @@ function App() {
         email: email,
         telefone: telefone,
         id: id,
-      }).then(() => {
-        limparCampos();
-        verPessoas();
-      });
-    } else if (state.button === 2) { // função Create do CRUD
+      })
+        .then(() => {
+          limparCampos();
+          verPessoas();
+          window.alert("Editado com sucesso!");
+        })
+        .catch(() => {
+          window.alert("Ocorreu um erro!");
+        });
+    } else if (state.button === 2) {
+      // função Create do CRUD
       Axios.post("http://localhost:3001/create", {
         nome: nome,
         sobrenome: sobrenome,
@@ -173,16 +182,20 @@ function App() {
         logradouro: logradouro,
         email: email,
         telefone: telefone,
-      }).then(() => {
-        limparCampos();
-        verPessoas();
-      });
+      })
+        .then(() => {
+          limparCampos();
+          verPessoas();
+          window.alert("Adicionado com sucesso!");
+        })
+        .catch(() => {
+          window.alert("Ocorreu um erro!");
+        });
     }
   };
 
   return (
     <div className="App">
-    
       {/* -----corpo do CRUD Create----- */}
       <form action="" onSubmit={onSubmit} className="form" id="form">
         {/* título do CRUD Create */}
@@ -392,7 +405,6 @@ function App() {
 
         {/* corpo dos botões do formulário */}
         <div className="buttons-div">
-          
           {/* corpo do botão do CRUD Create */}
           <div className="button-add-div" id="button-add-div">
             <button
@@ -454,11 +466,17 @@ function App() {
 
         {/* corpo da área em que as pessoas são listadas */}
         <div className="lista-pessoas">
-
           {/* corpo da função para listar todas as pessoas registradas no banco de dados */}
-          {listaPessoas.map((val, key) => { 
+          {listaPessoas.map((val, key) => {
             return (
               <div className="pessoa">
+                <div className="center-separator-crud">
+                  <div className="separator">
+                    <span className="separator-title" id="separator-title">
+                      #{val.id}
+                    </span>
+                  </div>
+                </div>
                 <h3 className="info-header">
                   <span className="info">NOME:</span>
                   <span className="info-valor">{val.nome}</span>
@@ -533,7 +551,6 @@ function App() {
         </div>
       </div>
       {/* ------------------------------ */}
-
     </div>
   );
 }
