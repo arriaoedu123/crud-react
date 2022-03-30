@@ -38,19 +38,19 @@ Esse projeto é uma API de cadastro de pessoas referente ao desafio do processo 
 
 ## Como usar
 
-Primeiramente, faça o seguinte comando SQL no banco de dados
+Primeiramente, certifique-se que seu banco de dados esteja no padrão utf-8 e faça o seguinte comando SQL
 ```
 CREATE TABLE `crudreact`.`pessoas`(
     `id` INT NOT NULL AUTO_INCREMENT,
-    `nome` VARCHAR(120) NOT NULL,
-    `sobrenome` VARCHAR(120) NOT NULL,
-    `nacionalidade` VARCHAR(120) NOT NULL,
-    `cep` VARCHAR(9) NOT NULL,
-    `estado` VARCHAR(2) NOT NULL,
-    `cidade` VARCHAR(120) NOT NULL,
-    `logradouro` VARCHAR(120) NOT NULL,
-    `email` VARCHAR(120) NOT NULL,
-    `telefone` VARCHAR(14) NOT NULL,
+    `nome` VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `sobrenome` VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `nacionalidade` VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `cep` VARCHAR(9) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `estado` VARCHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `cidade` VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `logradouro` VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `email` VARCHAR(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+    `telefone` VARCHAR(14) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
     PRIMARY KEY(`id`)
 ) ENGINE = INNODB;
 ```
